@@ -5,7 +5,7 @@ const CommentList = ({ postId }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  console.log(postId);
   const fetchComments = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -35,5 +35,6 @@ const CommentList = ({ postId }) => {
     </ul>
   );
 };
+
 
 export default CommentList;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import axios from "axios";
 import CommentCreate from "./CommentCreate.jsx";
 import CommentList from "./CommentList.jsx";
@@ -28,7 +28,7 @@ const PostList = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-
+  console.log(posts);
   return (
     <div className="d-flex flex-row flex-wrap justify-content-between">
       {Object.values(posts).map(post => (

@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
 
+
 const CommentCreate = ({ postId }) => {
     const [content, setContent] = useState('');
     const [error, setError] = useState('');
-
+    console.log(postId);
     const onSubmit = async (event) => {
         event.preventDefault();
         
@@ -42,5 +43,6 @@ const CommentCreate = ({ postId }) => {
         </div>
     );
 };
+
 
 export default CommentCreate;
