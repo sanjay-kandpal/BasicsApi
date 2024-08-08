@@ -13,7 +13,8 @@ const PostList = () => {
     const fetchPosts = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:4000/posts');
+        const response = await axios.get('http://localhost:4002/posts');
+        console.log(response.data);
         setPosts(response.data);
       } catch (err) {
         setError('Failed to fetch posts. Please try again later.');
@@ -35,7 +36,7 @@ const PostList = () => {
         <div className="card" style={{width: '30%', marginBottom: '20px'}} key={post.id}>
           <div className="card-body">
             <h3>{post.title}</h3>
-            <CommentList postId={post.id}/>
+            <CommentList comments={post.comments}/>
             <CommentCreate postId={post.id} />
           </div>
         </div>
